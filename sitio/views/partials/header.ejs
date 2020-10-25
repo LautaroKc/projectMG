@@ -1,0 +1,76 @@
+<header>
+<div class="container">
+      <!---Busqueda, cuenta y carrito-->
+  <div class="row">
+      <div class="col-4">
+        <form action="">
+          <div class="input-group">
+          <input id="barrabusqueda" type="text" placeholder="Buscar...">
+          <button id="lupa" type="submit"><i class="fas fa-search"></i></button>
+          </div>
+        </form>    
+      </div>
+    
+    <div class="col-4">
+      <a href="/"><img src="/images/banner.png" id="banner"></a>
+    </div>
+
+
+    <div class="col-4">
+      <div class="btn-group ml-5" id="botoningresoyregistro">
+      
+        <button type="button" class="btn btn-default dropdown-toggle"data-toggle="dropdown">
+          <i class="fas fa-user"></i>
+        <span class="caret"></span>
+        </button>
+      
+        <ul class="dropdown-menu" role="menu">
+          <% if (typeof usuario == "undefined") { %>
+            <li><a href="/users/login" id="ingresoyregistro">Ingresar</a></li>
+            <li><a href="/users/register" id="ingresoyregistro">Registrarse</a></li>
+          <% } else{ %>
+            <li><a href="/users/profile" id="ingresoyregistro">Perfil</a></li>
+            <li><a href="/users/logout" id="ingresoyregistro">Desloguear</a></li>
+            <% if (usuario.rol === "admin") { %>
+              <li><a href="/products/agregar" id="ingresoyregistro">Subir productos</a></li>
+              <li><a href="/products/listar" id="ingresoyregistro">Ver productos</a></li>
+            <% } %>
+          <% } %>
+        </ul>
+        <li class="nav-item" id="carrito">
+          <a class="nav-link" href="#" id="cajacarrito"><i class="fas fa-cart-plus"></i></a>
+        </li>
+        <% if (typeof usuario !== 'undefined') { %>
+          <li class="nav-item" id="carrito">
+            <p class="nav-link text-light mt-3"><%= usuario.nombre %> </p>
+          </li>
+        <% } %>
+         
+
+      </div>
+    </div>
+  </div>
+
+<!---navegacion-->
+    <div class="row">
+      <div class="col-12" id="navegacion">
+        <ul class="nav justify-content-center">
+          <img src="/images/icono.png" class="icononavegacion">
+          <li class="nav-item" id="headerNav">
+            <a class="nav-link active" href="/producto/all">Productos</a>
+          </li>
+          <li class="nav-item" id="headerNav">
+            <a class="nav-link" href="#">Armá tu Pc</a>
+          </li>
+          <li class="nav-item" id="headerNav">
+            <a class="nav-link" href="/nosotros">Nosotros</a>
+          </li>
+          <li class="nav-item" id="headerNav">
+            <a class="nav-link" href="/ayuda">Ayuda</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</div>
+<script src="/javascripts/headerNav.js"></script>
+</header>

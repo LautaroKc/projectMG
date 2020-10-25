@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %>
+
+<body>
+ <%- include('partials/header') %>
+
+<main>
+<h2 class="text-center my-4"><%= title %> </h2>
+<section class="container">
+    <div class="row p-5">
+        <div class="col-12" id="camposInput">    
+        <form action="" method="POST" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-md-12 col-lg-6">
+                     <div id="cajanombre form-group ">
+                        <label for="">Nombre:</label>
+                        <input class="form-control" type="text" name="nombre">
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-4">
+                    <div id="cajacategoria form-group">
+                        <label for="">Categoria:</label>
+                        <select name="categoria" class="form-control">
+                            <option value="8">Elija la categoría</option>
+                            <% categorias.forEach(categoria => { %>
+                                <option value=<%= categoria.id %> ><%= categoria.nombre.toUpperCase() %> </option>
+                            <% }) %>
+                           
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-2">
+                    <div id="cajaprecio form-group">
+                        <label for="">Precio:</label>
+                        <input type="number" name="precio" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row my-4">
+                <div class="col-md-12">
+                    <div class="form-group" id="cajadescripcion">
+                        <label for="textarea">Descripción:</label>
+                        <textarea id="textarea" col="30" rows="5" name="descripcion" class="form-control"></textarea>
+                        </div>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-around">
+                <div class="col-6">
+                    <div class="col-12 mt-4" id="cajafotos">
+                        <input type="file" class="custom-file-input " id="imagen" lang="en" name="imagen">
+                        <label class="custom-file-label" for="customFileLang">Agregar Imagen</label>
+                        <small id="errorImagen" class="text-danger"><%= (typeof errors != 'undefined' && errors.imagen)?errors.imagen.msg: "" %> </small>
+              </div>
+                </div>
+                <div class="col-4 mt-4">
+                    <button type="submit">Agregar</button>
+                    <button type="reset">Resetear</button>
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>    
+</section>
+</main>
+
+<%- include('partials/footer') %>
+<script>
+    $('.custom-file-input').on('change', function(event) {
+    var inputFile = event.currentTarget;
+    $(inputFile).parent()
+        .find('.custom-file-label')
+        .html(inputFile.files[0].name);
+    
+}); 
+
+</script>
+</body>
+</html>

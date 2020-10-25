@@ -1,0 +1,71 @@
+/*Main Registro*/
+
+main{
+    padding: 0px 20%;
+    text-align: center;
+    margin: 5% 0%;
+}
+
+main div{
+    margin: 5% 0%;
+}
+
+@media(min-width: 768px){
+    .inputUno {
+        position: relative;
+        left: 81px;
+    }
+    
+    .inputDos{
+        position: relative;
+        left: 93px;
+    }
+    
+    .inputTres{
+        position: relative;
+        left: 63px;
+    }
+
+    .inputCuatro{
+        position: relative;
+        left: 3%;
+    }
+
+    .exito{
+        font-size: 60px;
+    }
+}
+
+@media (min-width: 992px){
+    .inputUno{
+        position: relative;
+        left: 88px;
+    }
+
+    .inputDos{
+        position: relative;
+        left: 99px;
+    }
+
+    .inputTres{
+        position: relative;
+        left: 68px;
+    }
+}
+
+@media (min-width: 1440px){
+    .inputUno{
+        position: relative;
+        left: 95px;
+    }
+
+    .inputDos{
+        position: relative;
+        left: 104px;
+    }
+
+    .inputTres{
+        position: relative;
+        left: 78px;
+    }
+}

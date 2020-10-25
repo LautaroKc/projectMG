@@ -1,0 +1,307 @@
+@font-face{
+    font-family: lemonmilk;
+    src: url("/images/LEMONMILK-Light.otf");
+}
+
+:root{
+    --color-azul: #08162B;
+    --color-celeste: rgba(136, 216, 240, 0.507);
+}
+
+* {
+    font-family: lemonmilk;
+}
+
+body {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: var(--color-azul);
+    background-image: url("/images/fondo.png");
+}
+
+h2, h3, h4, h5, h6{
+    color: white;
+}
+
+input {
+    text-transform: none;
+}
+
+/*header*/
+header{
+    background-color: var(--color-celeste);
+    border-bottom: 2px solid white;
+}
+
+button#lupa {
+    position: absolute;
+    left: 67%;
+    bottom: -9px;
+    border: none;
+    background-color: transparent;
+}
+
+.row #barrabusqueda{
+    width: 100%;
+    margin-top: 18%;
+}
+
+.row{
+    box-sizing: border-box
+}
+
+/*header: Banner*/
+#banner{
+    height: 50%;
+    margin-top: 10%;
+    position: relative;
+    right: 15%;
+}
+
+/*header: Iconos Usuario y Carrito*/
+
+i.fas.fa-user {
+    color: orange;
+}
+
+#botoningresoyregistro .dropdown-menu.show{
+    background-color: rgba(134, 188, 212, 0.534);
+
+}
+
+#ingresoyregistro {
+    font-weight: bolder;
+    color: orange;
+    font-size: 10px;
+    margin-left: 5px;
+    text-decoration: none;
+}
+#ingresoyregistro:hover{
+    color:red;
+}
+
+#carrito{
+    list-style: none;
+}
+
+#cajacarrito i:hover{
+    color: red;
+}
+
+#cajacarrito{
+    padding: 1.5rem 1rem;
+}
+
+i.fas.fa-cart-plus {
+    color: orange;
+}
+
+/*header: navegacion*/
+
+.icononavegacion{
+    width: 8%;
+    position: relative;
+    right: 2%;
+    bottom: 2px;
+}
+
+.row #navegacion ul li{
+    color: silver;
+    font-size: 10px;
+    text-align: center;
+}
+
+.row #navegacion ul li a:hover{
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.664));
+    border-radius: 20px;
+    color: red
+}
+
+.row #navegacion ul li a{
+    color: orange;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+button{
+    border-radius: 5px;
+    background-color: orange;
+    border: orange solid 1px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+form{
+    font-weight: bold;
+    text-align: center;
+    color: orange;
+    margin-left: 1px;
+}
+
+section{
+    background-color: rgba(96, 161, 187, 0.589);
+    margin: 2px;
+    border-radius: 5px;
+    border: 1px solid white;
+}
+
+/*footer*/
+
+footer{
+    background-color: var(--color-celeste);
+    width: 100%;
+    text-align: center;
+    padding: 1em;
+    align-self: flex-end;
+}
+
+#contacto{
+    color: silver;
+    padding: 10px;
+    text-align: center;
+}
+
+.redes a{
+    margin: 3px;
+    color: orange
+}
+.redes a :hover{
+    color: red;
+}
+
+div#copyright{
+    position: relative;
+    left: 10%;
+}
+
+#copyright p{
+    color: white;
+    margin-top: 10px;
+    opacity: 0.70;
+    font-weight: bolder;
+}
+
+#sponsors{
+    background-color: rgba(134, 188, 212, 0.534);
+    width: 100%;
+}
+
+#sponsors h5{
+    text-align: center;
+    border-bottom: 1px solid orange;
+    color: white;
+    font-weight: bolder;
+}
+
+#sponsors.p{
+    color: white;
+}
+
+@media (min-width: 768px) {
+    #banner{
+        position: relative;
+        bottom: 15%;
+        left: 5%;
+    }
+
+    button#lupa {
+        position: absolute;
+        left: 60%;
+        bottom: -9px;
+        border: none;
+        background-color: transparent;
+    }
+    .row #barrabusqueda{
+        width: 80%;
+        margin-top: 10%;
+    }
+
+    .navbar-expand-md{
+        font-size: 25px;
+    }
+    .navbar-expand-md .navbar-nav{
+        flex-direction: column;
+    }
+
+    form{
+        font-size: 15px;
+    }
+
+    /*header: secciones*/
+    .icononavegacion{
+        width: 6%;
+        position: relative;
+        right: 1%;
+    }
+
+    .row #navegacion .secciones{
+        position: relative;
+        top: 10px
+    }
+    
+    .row #navegacion ul li{
+        font-size: 13px;
+    }
+
+    .row #navegacion ul li{
+        position: relative;
+        top: 15%;
+    }
+
+    /*footer*/
+    ul.redes{
+       display: grid;
+    }
+
+    div#copyright{
+        position: relative;
+        left: 25%;
+    }
+}
+
+@media (min-width: 992px) {
+    #banner{
+        position: relative;
+        left: 15%;
+        height: 60%;
+        bottom: 20%;
+    }
+    .icononavegacion{
+        width: 5%;
+        position: relative;
+        right: 2%;
+    }
+
+    .row #navegacion ul li{
+        font-size: 15px;
+    }
+    .row #navegacion ul li a{
+        position: relative;
+        top: 20%;
+    }
+
+    button#lupa {
+        position: absolute;
+        left: 68%;
+        bottom: -9px;
+        border: none;
+        background-color: transparent;
+    }
+
+    /*footer*/
+    #contacto{
+        color: silver;
+        position: relative;
+        bottom: -15px
+    }
+
+    ul.redes{
+        position: relative;
+        top: 5%
+    }
+
+    div#copyright{
+        position: relative;
+        left: 33%;
+    }
+}

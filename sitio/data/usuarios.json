@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "nombre": "master",
+        "email": "master@gmail.com",
+        "telefono": null,
+        "direccion": null,
+        "contrasenia": "$2b$10$/e59cRv2BuERZBmLa9ZNoeS/rDqwprXsKneeUWb5kYXlGpaid3qYu",
+        "rol": "usuario"
+    },
+    {
+        "id": 2,
+        "nombre": "evaristo",
+        "email": "evaristo@gmail.com",
+        "telefono": "1111-2000",
+        "direccion": "Av.Siemprevivas",
+        "contrasenia": "$2b$10$5iPt4B51oMVV952oKI6gXeZYOz6ZByPFUrWWtuxXdL1yl07YAXjC2",
+        "rol": "usuario"
+    },
+    {
+        "id": 3,
+        "nombre": "Test",
+        "email": "Test@gmail.com",
+        "telefono": null,
+        "direccion": null,
+        "contrasenia": "$2b$10$MU7RQTj1xcFiOAFppIbsLeXK0ZxWxBehzFA3C7a7rvHagE4NIVTSO",
+        "rol": "usuario"
+    }
+]
