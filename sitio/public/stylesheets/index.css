@@ -33,6 +33,14 @@ header{
     border-bottom: 2px solid white;
 }
 
+#avatarImage {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: 18px;
+}
+
 button#lupa {
     position: absolute;
     left: 67%;

@@ -9,10 +9,9 @@ module.exports = {
                 title : "Mountain Gamming"
             })
         })
-        .catch(error => res.send(error))
-        
+        .catch(error => res.send(error))  
     },
-    ayuda: (req, res) => {
+    help: function(req, res){
         res.render('ayuda', {
             css: "ayuda.css",
             title: "Ayuda"

@@ -7,6 +7,11 @@
     margin-top: 15px;
     margin-bottom: 15px;
 }
+#avatarImagePerfil{
+    border-radius: 50%;
+    position: relative;
+    bottom: 20%;
+}
 
 .datosusuario{
     position: relative;
@@ -27,4 +32,10 @@
 
 .datos h5 span{
     color: orangered;
+}
+
+#btnEditarPerfil{
+    position: relative;
+    bottom: 70%;
+    left: 5px;
 }

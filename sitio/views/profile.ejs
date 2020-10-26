@@ -15,11 +15,15 @@
                     <h5>Email: <span><%= usuario.email %></span></h5>
                     <h5>Telefono:  <span><%= usuario.telefono %></span></h5>
                     <h5>Dirección: <span><%= usuario.direccion %></span></h5>
+                    <h5>Avatar:</h5>
+                    <img src="/images/users/<%= usuario.avatar %>" width="70px" height="70px" id="avatarImagePerfil">
+                </div>
+        
+                <div class="col-12 nav justify-content-center">
+                    <a href="/users/edit"><button type="button" id="btnEditarPerfil">Editar</button></a> 
                 </div>
         </div>
-        <div class="col-12 nav justify-content-center">
-            <a href="/users/edit"><button type="button">Editar</button></a> 
-        </div>
+        
     </div>
 </div>
 

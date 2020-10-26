@@ -13,7 +13,7 @@
         <section class="container">
             <h3>Completa tus datos</h3>
 
-            <form action="" method="POST">
+            <form action="" method="POST" enctype="multipart/form-data">
                     <div class="col-12">
                     <label for="nombre">Nombre:</label>
                     <input type="text" name="nombre" class="inputUno" <%= (typeof old != 'undefined' && old.nombre)? "es-valido": (typeof errors != 'undefined' && errors.nombre)?"es-invalido": ""%> value="<%= (typeof old != 'undefined' && old.nombre)?old.nombre:'' %>">
@@ -24,8 +24,14 @@
                         <label for="nombre">Apellido:</label>
                         <input type="text" name="apellido" class="inputUno" <%= (typeof old != 'undefined' && old.apellido)? "es-valido": (typeof errors != 'undefined' && errors.apellido)?"es-invalido": ""%> value="<%= (typeof old != 'undefined' && old.apellido)?old.apellido:'' %>">
                         <small class="text-danger" style="display: grid;"><%= (typeof errors != 'undefined' && errors.apellido)?errors.apellido.msg: "" %> </small>
-                        </div>
+                    </div>
                     
+                    <div class="col-12">
+                        <label for="avatar" id="imagendeperfil">Imagen de perfil:</label>
+                        <input type="file" name="avatar" id="inputAvatar">
+                        <small class="text-danger" style="display: grid;"><%= (typeof errors != 'undefined' && errors.avatar)?errors.avatar.msg: "" %></small>
+                    </div>
+
                     <div class="col-12">
                     <label for="email">Email:</label>
                     <input type="email" name="email" class="inputDos" value="<%= (typeof old != 'undefined' && old.email)?old.email:'' %>">

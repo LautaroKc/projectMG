@@ -16,6 +16,7 @@ module.exports = {
             apellido : req.body.apellido.trim(),
             email : req.body.email.trim(),
             password : bcrypt.hashSync(req.body.contrasenia,10),
+            avatar: (req.files[0])?req.files[0].filename: "noavatar.png",
             rol : "user"
         })
         .then(usuario => {
@@ -95,7 +96,8 @@ module.exports = {
             apellido : req.body.apellido.trim(),
             email : req.body.email.trim(),
             telefono : req.body.telefono,
-            direccion : req.body.direccion
+            direccion : req.body.direccion,
+            avatar: (req.files[0])?req.files[0].filename:req.session.usuario.avatar
             },
             {
                 where : {

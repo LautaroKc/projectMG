@@ -40,11 +40,15 @@
         <li class="nav-item" id="carrito">
           <a class="nav-link" href="#" id="cajacarrito"><i class="fas fa-cart-plus"></i></a>
         </li>
-        <% if (typeof usuario !== 'undefined') { %>
+
+        <% if (typeof usuario == 'undefined') { %>
+          <img src="/images/users/noavatar.png" alt="" id="avatarImage">
+        <% } else { %>
           <li class="nav-item" id="carrito">
-            <p class="nav-link text-light mt-3"><%= usuario.nombre %> </p>
+            <p class="nav-link text-light mt-3"><%= usuario.nombre %></p>
           </li>
-        <% } %>
+          <img src="/images/users/<%=usuario.avatar %>" alt="" id="avatarImage">
+          <% } %>
          
 
       </div>
