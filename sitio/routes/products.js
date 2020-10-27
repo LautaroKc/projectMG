@@ -6,6 +6,7 @@ let upLoadMulter = require('../middlewares/upImagesProducts');
 
 router.get('/listar',productController.listar);
 router.get('/detalle/:id',productController.detalle);
+router.get('/busqueda',productController.buscar);
 
 router.get('/agregar',productController.agregar);
 router.post('/agregar',upLoadMulter.any(), productController.guardar);

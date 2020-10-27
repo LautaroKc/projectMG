@@ -1,4 +1,5 @@
 const db = require('../database/models');
+const {Op} = require ("sequelize")
 
 module.exports = {
     listar : (req,res) => {
@@ -9,6 +10,17 @@ module.exports = {
                 productos : productos
             })
         })
+    },
+    buscar: function(req, res) {
+        db.Productos.findAll({
+            where: {
+                nombre: {
+                    [Op.like] : `%${search}%`
+                }
+            }
+        })
+        .then(resultado => {res.send("funciona")})
+
     },
     detalle : (req,res) => {
         db.Productos.findOne({
