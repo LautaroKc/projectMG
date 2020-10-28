@@ -12,15 +12,25 @@ module.exports = {
         })
     },
     buscar: function(req, res) {
-        db.Productos.findAll({
-            where: {
-                nombre: {
-                    [Op.like] : `%${search}%`
-                }
+    let buscar = req.query.buscador;
+    db.Productos.findAll({
+        where: {
+            nombre: {
+                [Op.like] : buscar
             }
-        })
-        .then(resultado => {res.send("funciona")})
-
+        }, include: [{association : 'categoria'}]
+    })
+    .then(resultado => {
+        if(resultado != 0){
+            res.render('productoBuscar',{
+                title: "Resultado de búsqueda",
+                css: "index.css",
+                producto: resultado
+            })
+        } else {
+            res.redirect('/')
+        }
+    })
     },
     detalle : (req,res) => {
         db.Productos.findOne({

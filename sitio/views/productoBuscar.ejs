@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head') %>
+<link rel="stylesheet" href="/stylesheets/<%= css %>">
+<body>
+<%- include('partials/header') %>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h2>Resultados de su busqueda: <%= producto.length %></h5>
+        </div>
+        <div class="col-12">
+            <figure id="productoCajaBusqueda">
+            <% producto.forEach(producto => { %>
+                <a href="/products/detalle/<%= producto.id %>">
+                <img src="/images/products/<%= producto.imagen %>" alt="img" width="150px">
+                <h4 class="productoEncontrado"><%= producto.nombre %></h4>
+                </a>
+            <% }) %>
+            </figure>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %> 
+</body>
+</html>
