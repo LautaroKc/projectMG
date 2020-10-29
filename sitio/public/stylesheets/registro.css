@@ -16,6 +16,11 @@ main div{
         left: 81px;
     }
     
+    .inputUnoApellido {
+        position: relative;
+        left: 79px;
+    }
+
     .inputDos{
         position: relative;
         left: 93px;
@@ -40,6 +45,10 @@ main div{
     .inputUno{
         position: relative;
         left: 88px;
+    }
+    .inputUnoApellido {
+        position: relative;
+        left: 89px;
     }
 
     .inputDos{

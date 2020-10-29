@@ -5,8 +5,9 @@
       <div class="col-4">
         <form action="/products/buscar" method="GET">
           <div class="input-group">
-          <input id="barrabusqueda" type="text" placeholder="Buscar..." name="buscador">
+          <input id="barrabusqueda" type="text" placeholder="Buscar..." name="buscador" class="is-valid">
           <button id="lupa" type="submit"><i class="fas fa-search"></i></button>
+          <small id="errorBusqueda" style="display: none; color: red;"></small>
           </div>
         </form>    
       </div>
@@ -77,4 +78,5 @@
     </div>
 </div>
 <script src="/javascripts/headerNav.js"></script>
+<script src="/javascripts/barraBusqueda.js"></script>
 </header>
