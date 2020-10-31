@@ -11,17 +11,17 @@
                 <h3>¡Ingresa a tu cuenta!</h3>
             </div>
             <div class="col-12 text-center">
-                <form action="" method="POST">
+                <form action="/users/login" method="POST" id="formularioLogin">
                     <div class="col-12">
                     <label>Email:</label>
-                    <input class="form-control" type="text" class="inputCinco" value="<%= (typeof old != 'undefined' && old.email)?old.email:'' %>" name="email">
-                    <small class="text-danger" style="display: grid;"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %> </small>
+                    <input class="form-control" type="text" class="inputCinco" value="<%= (typeof old != 'undefined' && old.email)?old.email:'' %>" name="email" id="inputMail">
+                    <small class="text-danger" style="display: grid;" id="errorMail"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %> </small>
                     </div>
         
                     <div class="col-12 my-4">
                     <label>Contraseña:</label>
-                    <input class="form-control" type="password" class="inputSeis" name="contrasenia">
-                    <small class="text-danger" style="display: grid;"><%= (typeof errors != 'undefined' && errors.contrasenia)?errors.contrasenia.msg: "" %> </small>
+                    <input class="form-control" type="password" class="inputSeis" name="contrasenia" id="inputContrasenia">
+                    <small class="text-danger" style="display: grid;" id="errorContrasenia"><%= (typeof errors != 'undefined' && errors.contrasenia)?errors.contrasenia.msg: "" %> </small>
                     <button type="submit" class="btningresar">Ingresar</button>
                     </div>
                     <a href="/users/register" id="registrarse">¿No tenés cuenta aún? ¡Registrate!</a>
@@ -31,5 +31,6 @@
     </div>
 </main>    
     <%- include('partials/footer') %>
+    <script type="text/javascript" src="/javascripts/loginValidator.js"></script>
 </body>
 </html>

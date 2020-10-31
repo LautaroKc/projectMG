@@ -17,7 +17,7 @@ window.addEventListener('load', function(){
     //expresiones regulares
     let regExExtensions = /\.(jpg|jpeg|png|gif)$/ //imagenes
     let regEmail = /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/; //email
-    let regPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/; //contraseña, entre 6 y 12 caracteres?
+    let regPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/; //contraseña, entre 6 y 12 caracteres?entre una minuscula y mayuscula
 
 //validaciones:
 inputNombre.addEventListener('blur', function(){
