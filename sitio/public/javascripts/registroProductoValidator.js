@@ -44,7 +44,8 @@ categoriaProducto.addEventListener('change', function(){
         errorCategoria.innerHTML = "";
         return true;
     }
-})
+}) //Esto no esta funcionando como debe, corregir!
+
 precioProducto.addEventListener('blur', function(){
     let errorPrecio = qs('#errorPrecio');
     if(precioProducto.value.length == 0){
