@@ -10,30 +10,33 @@
 <section class="container">
     <div class="row p-5">
         <div class="col-12" id="camposInput">    
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="" method="POST" enctype="multipart/form-data" id="formProducto">
             <div class="row">
                 <div class="col-md-12 col-lg-6">
                      <div id="cajanombre form-group ">
                         <label for="">Nombre:</label>
-                        <input class="form-control" type="text" name="nombre">
+                        <input class="form-control" type="text" name="nombre" id="inputNombre">
+                        <small id="errorNombreProducto" style="display: none; color: red;"></small>
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-4">
                     <div id="cajacategoria form-group">
                         <label for="">Categoria:</label>
-                        <select name="categoria" class="form-control">
+                        <select name="categoria" class="form-control" id="categoriaProducto">
                             <option value="8">Elija la categoría</option>
                             <% categorias.forEach(categoria => { %>
                                 <option value=<%= categoria.id %> ><%= categoria.nombre.toUpperCase() %> </option>
                             <% }) %>
                            
                         </select>
+                        <small id="errorCategoria" style="display: none; color: red;"></small>
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-2">
                     <div id="cajaprecio form-group">
                         <label for="">Precio:</label>
-                        <input type="number" name="precio" class="form-control">
+                        <input type="number" name="precio" class="form-control" id="precioProducto">
+                        <small id="errorPrecio" style="display: none; color: red;"></small>
                     </div>
                 </div>
             </div>
@@ -42,7 +45,8 @@
                     <div class="form-group" id="cajadescripcion">
                         <label for="textarea">Descripción:</label>
                         <textarea id="textarea" col="30" rows="5" name="descripcion" class="form-control"></textarea>
-                        </div>
+                        <small id="errorComentario" style="display: none; color: red;"></small>
+                    </div>
                 </div>
             </div>
             <div class="row d-flex justify-content-around">
@@ -51,7 +55,8 @@
                         <input type="file" class="custom-file-input " id="imagen" lang="en" name="imagen">
                         <label class="custom-file-label" for="customFileLang">Agregar Imagen</label>
                         <small id="errorImagen" class="text-danger"><%= (typeof errors != 'undefined' && errors.imagen)?errors.imagen.msg: "" %> </small>
-              </div>
+                        <small id="errorImagenD" style="display: none; color: red;"></small>
+                    </div>
                 </div>
                 <div class="col-4 mt-4">
                     <button type="submit">Agregar</button>
@@ -65,6 +70,7 @@
 </main>
 
 <%- include('partials/footer') %>
+<script src="/javascripts/registroProductoValidator.js"></script>
 <script>
     $('.custom-file-input').on('change', function(event) {
     var inputFile = event.currentTarget;

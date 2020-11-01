@@ -13,7 +13,7 @@ window.addEventListener('load', function(){
     console.log(elementos);
 
     let regEmail = /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
-    let regPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
+    let regPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,12}$/;
 
     inputMail.addEventListener('blur', function(){
         let errorMail = qs('#errorMail');
@@ -28,6 +28,23 @@ window.addEventListener('load', function(){
             return false;
         } else {
             errorMail.style.display = "none";
+            return true;
+        }
+    })
+
+    inputContrasenia.addEventListener('blur', function(){
+        let errorPass = qs('#errorContrasenia');
+        if(inputContrasenia.value.length == 0){
+            errorPass.style.display = "grid";
+            errorPass.innerHTML = "El campo no puede estar vacio";
+            return false;
+        }
+        if(inputContrasenia.value.length < 5){
+            errorPass.style.display = "grid";
+            errorPass.innerHTML = "Debe tener más de 5 caracteres."
+            return false;
+        } else {
+            errorPass.style.display = "none";
             return true;
         }
     })
