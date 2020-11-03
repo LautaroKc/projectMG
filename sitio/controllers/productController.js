@@ -103,26 +103,31 @@ module.exports = {
         })
     },
     actualizar : (req,res) => {
-        db.Productos.update({
-            nombre:req.body.nombre.trim(),
-            precio:Number(req.body.precio),
-            descripcion:req.body.descripcion,
-            id_categoria:Number(req.body.categoria)
-        },
-        {
-            where : {
-                id : req.params.id
+        let errors = validationResult(req)
+        if (!errors.isEmpty()) {
+            db.Productos.update({
+                nombre:req.body.nombre.trim(),
+                precio:Number(req.body.precio),
+                descripcion:req.body.descripcion,
+                id_categoria:Number(req.body.categoria)
+            },
+            {
+                where : {
+                    id : req.params.id
+                }
             }
+           
+            )
+            .then(result => {
+                console.log(result)
+                res.redirect('/products/listar')
+            })
+            .catch(err => {
+                res.send(err)
+            })
+        }else{
+            res.render("editarProducto")
         }
-       
-        )
-        .then(result => {
-            console.log(result)
-            res.redirect('/products/listar')
-        })
-        .catch(err => {
-            res.send(err)
-        })
     },
     eliminar : (req,res) => {
         db.Productos.destroy({

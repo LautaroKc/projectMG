@@ -11,6 +11,7 @@ window.addEventListener('load', function(){
     let precioProducto = qs('#precioProducto');
     let comentarioProducto = qs('#textarea');
     let imagenProducto = qs('#imagen');
+    let elementos =formulario.elements
 
 //expresiones regulares
     let regImagen = /\.(jpg|jpeg|png|gif)$/ //imagenes
@@ -88,8 +89,9 @@ imagenProducto.addEventListener('change', function(){
 formulario.addEventListener('submit',function(e){
     e.preventDefault()
     let error = false;
-    for (let i = 0; i < elementos.length -1; i++) {
+    for (let i = 0; i < elementos.length -2; i++) {
         if (elementos[i].value==0) {
+            console.log(elementos[i])
             elementos[i].classList.add('is-invalid');
             error = true;
         }

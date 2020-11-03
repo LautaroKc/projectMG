@@ -9,18 +9,19 @@
 <section class="container">
     <div class="row p-5">
         <div class="col-12" id="camposInput">    
-        <form action="/products/editar/<%= producto.id %>?_method=PUT"  method="POST">
+        <form action="/products/editar/<%= producto.id %>?_method=PUT"  method="POST" id="formularioEditProduct">
             <div class="row">
                 <div class="col-md-12 col-lg-6">
                      <div id="cajanombre form-group ">
                         <label for="">Nombre:</label>
-                        <input class="form-control" type="text" name="nombre" value="<%= producto.nombre %> ">
+                        <input class="form-control" type="text" name="nombre" value="<%= producto.nombre %> " id="inputNombre">
+                        <small id="errorNombre" style="display: none; color: red;"></small>
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-4">
                     <div id="cajacategoria form-group">
                         <label for="">Categoria:</label>
-                        <select name="categoria" class="form-control">
+                        <select name="categoria" class="form-control" id="inputCategoria">
                             <% if (producto.id_categoria) { %>
                                 <option value="<%= producto.id_categoria %>"><%= producto.categoria.nombre %> </option>
                             <% }else{ %>
@@ -32,12 +33,14 @@
                             <% }) %>
                            
                         </select>
+                        <small id="errorCategoria" style="display: none; color: red;"></small>
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-2">
                     <div id="cajaprecio form-group">
                         <label for="">Precio:</label>
-                        <input type="number" name="precio" class="form-control" value=<%= producto.precio %>>
+                        <input type="number" name="precio" class="form-control" value= "<%= producto.precio %>" id="inputCategoria">
+                        <small id="errorPrecio" style="display: none; color: red;"></small>
                     </div>
                 </div>
             </div>
@@ -47,6 +50,7 @@
                         <label for="textarea">Descripción:</label>
                         <textarea id="textarea" col="30" rows="5" name="descripcion" class="form-control"><%= producto.descripcion %> </textarea>
                         </div>
+                        <small id="errorDescripcion" style="display: none; color: red;"></small>
                 </div>
             </div>
                 <div class="">
