@@ -11,35 +11,41 @@
         <section class="editarPerfilSection">
             <h3 class="text-center">Edita tus datos:</h3>
             <div class="editInfoContenedor">
-            <form action="/users/profile/edit/<%= usuario.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form action="/users/profile/edit/<%= usuario.id %>?_method=PUT" method="POST" enctype="multipart/form-data" id="formEditUser">
                     <div class="col-12 divEdit">
                     <label for="nombre">Nombre:</label>
                     <input type="text" name="nombre" value="<%= usuario.nombre %>" id="inputUnoEdit">
+                    <small id="errorNombre" style="display: none; color: red;"></small>
                     </div>
 
                     <div class="col-12 divEdit">
                     <label for="nombre">Apellido:</label>
-                    <input type="text" name="apellido" value="<%= usuario.apellido %>" id="inputUnoEdit">
+                    <input type="text" name="apellido" value="<%= usuario.apellido %>" id="inputUnoEdit" class="inputApellido">
+                    <small id="errorApellido" style="display: none; color: red;"></small>
                     </div>
                     
                     <div class="col-12 divEdit">
                     <label for="email">Email:</label>
                     <input type="email" name="email" value="<%= usuario.email %>" id="inputDosEdit">
+                    <small id="errorEmail" style="display: none; color: red;"></small>
                     </div>
 
                     <div class="col-12 divEdit">
-                        <label for="telefono">Telefono:</label>
-                        <input type="text" name="telefono" value="<%= usuario.telefono %>" id="inputTresEdit">
+                    <label for="telefono">Telefono:</label>
+                    <input type="text" name="telefono" value="<%= usuario.telefono %>" id="inputTresEdit">
+                    <small id="errorTelefono" style="display: none; color: red;"></small>
                     </div>
 
                     <div class="col-12 divEdit">
                     <label for="direccion">Dirección:</label>
                     <input type="text" name="direccion" value="<%= usuario.direccion %>" id="inputCuatroEdit">
+                    <small id="errorDireccion" style="display: none; color: red;"></small>
                     </div>
 
                     <div class="col-12 divEdit">
                     <label for="avatar">Avatar:</label>
-                    <input type="file" name="avatar" value="<%= usuario.avatar %>">
+                    <input type="file" name="avatar" value="<%= usuario.avatar %>" id="inputAvatar">
+                    <small id="errorAvatar" style="display: none; color: red;"></small>
                     </div>
 
                     <div class="divEdit">
@@ -57,5 +63,6 @@
 </div>
 
     <%- include('partials/footer') %>
+<script src="/javascripts/edicionUsuario.js"></script>
 </body>
 </html>
