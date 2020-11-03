@@ -23,7 +23,7 @@
                     <div id="cajacategoria form-group">
                         <label for="">Categoria:</label>
                         <select name="categoria" class="form-control" id="categoriaProducto">
-                            <option value="8">Elija la categoría</option>
+                            <option value="">Elija la categoría</option>
                             <% categorias.forEach(categoria => { %>
                                 <option value=<%= categoria.id %> ><%= categoria.nombre.toUpperCase() %> </option>
                             <% }) %>

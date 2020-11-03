@@ -1,5 +1,6 @@
 const db = require('../database/models');
-const {Op} = require ("sequelize")
+const {Op} = require ("sequelize");
+const {validationResult} = require('express-validator');
 
 module.exports = {
     listar : (req,res) => {
@@ -94,6 +95,7 @@ module.exports = {
         })
         Promise.all([categorias,producto])
         .then(([categorias,producto]) => {
+            console.log("error")
             res.render('editarProducto', {
                 title: "Editar Producto",
                 css:'editProducto.css',
@@ -104,7 +106,8 @@ module.exports = {
     },
     actualizar : (req,res) => {
         let errors = validationResult(req)
-        if (!errors.isEmpty()) {
+        if (errors.isEmpty()) {
+            console.log("error")
             db.Productos.update({
                 nombre:req.body.nombre.trim(),
                 precio:Number(req.body.precio),
@@ -126,7 +129,29 @@ module.exports = {
                 res.send(err)
             })
         }else{
-            res.render("editarProducto")
+            let categorias = db.Categorias.findAll({
+                order:[
+                    'nombre'
+                ]
+            })
+            let producto = db.Productos.findOne({
+                where : {
+                    id : req.params.id
+                },
+                include : [
+                    {association : 'categoria'}
+                ]
+            })
+            Promise.all([categorias,producto])
+            .then(([categorias,producto]) => {
+                console.log("error")
+                res.render('editarProducto', {
+                    title: "Editar Producto",
+                    css:'editProducto.css',
+                    categorias: categorias,
+                    producto : producto
+                }) 
+            })
         }
     },
     eliminar : (req,res) => {

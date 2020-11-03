@@ -34,9 +34,9 @@ nombreProducto.addEventListener('blur', function(){
         return true;
     }
 })
-categoriaProducto.addEventListener('change', function(){
+categoriaProducto.addEventListener('blur', function(){
     let errorCategoria = qs('#errorCategoria');
-    if(categoriaProducto.value == 0){
+    if(categoriaProducto.value == ""){
         errorCategoria.style.display = "grid";
         errorCategoria.innerHTML = "Seleccione una categoria";
         return false;
