@@ -17,7 +17,7 @@ router.get('/buscar', productController.buscar);
 
 //agregar productos
 router.get('/agregar',productController.agregar);
-router.post('/agregar', productoValidator, upLoadMulter.any(), productController.guardar);
+router.post('/agregar', upLoadMulter.any(), productController.guardar);
 
 //editar productos
 router.get('/editar/:id',productController.editar);

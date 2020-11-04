@@ -11,19 +11,30 @@ module.exports = {
         })
     },
     processRegister : (req,res) => {
-        db.Usuarios.create({
-            nombre : req.body.nombre.trim(),
-            apellido : req.body.apellido.trim(),
-            email : req.body.email.trim(),
-            password : bcrypt.hashSync(req.body.contrasenia,10),
-            avatar: (req.files[0])?req.files[0].filename: "noavatar.png",
-            rol : "user"
-        })
-        .then(usuario => {
-            console.log(usuario)
-            return res.redirect('/users/login')
-        })
-        .catch(error => console.log(error))
+        let errors = validationResult(req)
+        if (errors.isEmpty()) {
+            db.Usuarios.create({
+                nombre : req.body.nombre.trim(),
+                apellido : req.body.apellido.trim(),
+                email : req.body.email.trim(),
+                password : bcrypt.hashSync(req.body.contrasenia,10),
+                avatar: (req.files[0])?req.files[0].filename: "noavatar.png",
+                rol : "user"
+            })
+            .then(usuario => {
+                console.log(usuario)
+                return res.redirect('/users/login')
+            })
+            .catch(error => console.log(error))
+        }else{
+            res.render("register",{
+                title : "Registro de Usuarios",
+                css : 'registro.css',
+                errors: errors.mapped(),
+                old: req.body
+            })
+        }
+        
     },
     login : (req,res) => {
         res.render('login',{

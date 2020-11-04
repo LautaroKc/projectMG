@@ -115,11 +115,11 @@ formulario.addEventListener('submit', function(event){
             error = true;
         }
     }
-    if(error){
-        console.log("todo ok!");
+    if(!error){
+        formulario.submit()
         
     } else {
-        formulario.event()
+        console.log("todo ok else")
     }
 })
 

@@ -4,6 +4,7 @@ const router = express.Router();
 //validaciones
 const userController = require('../controllers/userController');
 const loginValidator = require('../validations/loginValidator');
+const registroUsuarioValidator = ('../validations/registroUsuarioValidator');
 
 //middlewares
 const avatarUser = require('../middlewares/avatarUser');
