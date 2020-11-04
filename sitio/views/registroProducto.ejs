@@ -9,14 +9,15 @@
 <h2 class="text-center my-4"><%= title %> </h2>
 <section class="container">
     <div class="row p-5">
+    <small class="col-12 nav justify-content-center" id="errorMsg" style="display: none; color: red;"></small>
         <div class="col-12" id="camposInput">    
-        <form action="" method="POST" enctype="multipart/form-data" id="formProducto">
+        <form action="" method="POST" enctype="multipart/form-data" id="formProduct">
             <div class="row">
                 <div class="col-md-12 col-lg-6">
                      <div id="cajanombre form-group ">
                         <label for="">Nombre:</label>
                         <input class="form-control" type="text" name="nombre" id="inputNombre">
-                        <small id="errorNombreProducto" style="display: none; color: red;"></small>
+                        <small id="errorNombreProducto" style="display: grid; color: red;"><%= (typeof errors != 'undefined' && errors.nombre)?errors.nombre.msg: "" %></small>
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-4">
@@ -29,14 +30,14 @@
                             <% }) %>
                            
                         </select>
-                        <small id="errorCategoria" style="display: none; color: red;"></small>
+                        <small id="errorCategoria" style="display: grid; color: red;"><%= (typeof errors != 'undefined' && errors.categoria)?errors.categoria.msg: "" %></small>
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-2">
                     <div id="cajaprecio form-group">
                         <label for="">Precio:</label>
                         <input type="number" name="precio" class="form-control" id="precioProducto">
-                        <small id="errorPrecio" style="display: none; color: red;"></small>
+                        <small id="errorPrecio" style="display: grid; color: red;"><%= (typeof errors != 'undefined' && errors.precio)?errors.precio.msg: "" %></small>
                     </div>
                 </div>
             </div>
@@ -45,7 +46,7 @@
                     <div class="form-group" id="cajadescripcion">
                         <label for="textarea">Descripción:</label>
                         <textarea id="textarea" col="30" rows="5" name="descripcion" class="form-control"></textarea>
-                        <small id="errorComentario" style="display: none; color: red;"></small>
+                        <small id="errorComentario" style="display: grid; color: red;"><%= (typeof errors != 'undefined' && errors.descripcion)?errors.descripcion.msg: "" %></small>
                     </div>
                 </div>
             </div>
@@ -54,7 +55,7 @@
                     <div class="col-12 mt-4" id="cajafotos">
                         <input type="file" class="custom-file-input " id="imagen" lang="en" name="imagen">
                         <label class="custom-file-label" for="customFileLang">Agregar Imagen</label>
-                        <small id="errorImagen" class="text-danger"><%= (typeof errors != 'undefined' && errors.imagen)?errors.imagen.msg: "" %> </small>
+                        <small id="errorImagen" class="text-danger" style="display: grid;"><%= (typeof errors != 'undefined' && errors.imagen)?errors.imagen.msg: "" %> </small>
                         <small id="errorImagenD" style="display: none; color: red;"></small>
                     </div>
                 </div>

@@ -64,20 +64,37 @@ module.exports = {
         })
     },
     guardar : (req,res) => {
-        db.Productos.create({
-            nombre:req.body.nombre.trim(),
-            precio:Number(req.body.precio),
-            descripcion:req.body.descripcion,
-            imagen:req.files[0].filename,
-            id_categoria:Number(req.body.categoria)
-        })
-        .then(result => {
-            console.log(result)
-            res.redirect('/')
-        })
-        .catch(err => {
-            res.send(err)
-        })
+        let errors = validationResult(req);
+        if(errors.isEmpty()){
+            db.Productos.create({
+                nombre:req.body.nombre.trim(),
+                precio:Number(req.body.precio),
+                descripcion:req.body.descripcion,
+                imagen:(req.files[0])?req.files[0].filename: "noimage.png",
+                id_categoria:Number(req.body.categoria)
+            })
+            .then(result => {
+                console.log(result)
+                res.redirect('/')
+            })
+            .catch(err => {
+                res.send(err)
+            }) 
+        } else {
+            db.Categorias.findAll({
+                order:[
+                    'nombre'
+                ]
+            })
+            .then(categoria => {
+                res.render('registroProducto', {
+                    title: "Agregar Producto",
+                    css: 'registroProduct.css',
+                    categorias: categoria,
+                    errors: errors.mapped()
+                })  
+            })
+        }
     },
     editar : (req,res) => {
         let categorias = db.Categorias.findAll({
