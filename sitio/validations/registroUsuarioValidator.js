@@ -3,7 +3,7 @@ const db = require('../database/models')
 const { check, body } = require('express-validator');
 const bcrypt = require('bcrypt');
 
-module.exports[
+module.exports = [
     check('nombre')
         .isLength({ min: 1 })
         .withMessage("Ingrese un nombre valido"),
