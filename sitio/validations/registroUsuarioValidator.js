@@ -22,13 +22,16 @@ module.exports = [
         .isLength({ min: 6 })
         .withMessage("Ingrese una contraseña de minimo de 6 caracteres"),
 
-    check('contraseniados'),
-        body('contrasenianados')
-        .custom(function(value,{req}){
-            if(value!=req.body.contrasenia){
-                return false
-            }
-            return true
-        })
-        .withMessage("las contraseñas deber ser identicas")
+    check('contraseniados')
+        .isEmpty()
+        .withMessage("El campo no puede estar vacio!"),
+
+    body('contrasenianados')
+    .custom(function(value,{req}){
+        if(value != req.body.contrasenia){
+            return false
+        }
+        return true
+    })
+    .withMessage("las contraseñas deber ser identicas")
 ]

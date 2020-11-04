@@ -11,7 +11,7 @@ module.exports = {
         })
     },
     processRegister : (req,res) => {
-        let errors = validationResult(req)
+        let errors = validationResult(req);
         if (errors.isEmpty()) {
             db.Usuarios.create({
                 nombre : req.body.nombre.trim(),
@@ -27,14 +27,13 @@ module.exports = {
             })
             .catch(error => console.log(error))
         }else{
-            res.render("register",{
-                title : "Registro de Usuarios",
-                css : 'registro.css',
+            res.render('register',{
+                title: "Registro de Usuarios",
+                css: 'registro.css',
                 errors: errors.mapped(),
                 old: req.body
             })
         }
-        
     },
     login : (req,res) => {
         res.render('login',{
