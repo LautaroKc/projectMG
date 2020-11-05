@@ -15,24 +15,24 @@
                     <div class="col-12 divEdit">
                     <label for="nombre">Nombre:</label>
                     <input type="text" name="nombre" value="<%= usuario.nombre %>" id="inputUnoEdit">
-                    <small id="errorNombre" style="display: none; color: red;"></small>
+                    <small id="errorNombre" style="display: grid; color: red;"><%= (typeof errors != "undefined" && errors.nombre)?errors.nombre.msg: "" %></small>
                     </div>
 
                     <div class="col-12 divEdit">
                     <label for="nombre">Apellido:</label>
                     <input type="text" name="apellido" value="<%= usuario.apellido %>" id="inputUnoEdit" class="inputApellido">
-                    <small id="errorApellido" style="display: none; color: red;"></small>
+                    <small id="errorApellido" style="display: none; color: red;"><%= (typeof errors != "undefined" && errors.apellido)?errors.apellido.msg: "" %></small>
                     </div>
                     
                     <div class="col-12 divEdit">
                     <label for="email">Email:</label>
                     <input type="email" name="email" value="<%= usuario.email %>" id="inputDosEdit">
-                    <small id="errorEmail" style="display: none; color: red;"></small>
+                    <small id="errorEmail" style="display: none; color: red;"><%= (typeof errors != "undefined" && errors.email)?errors.email.msg: "" %></small>
                     </div>
 
                     <div class="col-12 divEdit">
                     <label for="telefono">Telefono:</label>
-                    <input type="text" name="telefono" value="<%= usuario.telefono %>" id="inputTresEdit">
+                    <input type="number" name="telefono" value="<%= usuario.telefono %>" id="inputTresEdit">
                     <small id="errorTelefono" style="display: none; color: red;"></small>
                     </div>
 
@@ -45,7 +45,7 @@
                     <div class="col-12 divEdit">
                     <label for="avatar">Avatar:</label>
                     <input type="file" name="avatar" value="<%= usuario.avatar %>" id="inputAvatar">
-                    <small id="errorAvatar" style="display: none; color: red;"></small>
+                    <small id="errorAvatar" style="display: none; color: red;"><%= (typeof errors != "undefined" && errors.avatar)?errors.avatar.msg: "" %></small>
                     </div>
 
                     <div class="divEdit">

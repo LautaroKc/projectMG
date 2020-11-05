@@ -130,7 +130,8 @@ formulario.addEventListener('submit', function(event){
     event.preventDefault();
     let elementos = formulario.elements;
     let error = false;
-    for (let i = 0; i < elementos.length -1; i++) {
+    for (let i = 0; i < elementos.length -3; i++) {
+        console.log(elementos[i].value)
         if(elementos[i].value == 0) {
             elementos[i].classList.add('is-invalid');
             error = true;

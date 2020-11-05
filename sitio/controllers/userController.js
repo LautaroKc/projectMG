@@ -100,26 +100,35 @@ module.exports = {
         })
     },
     update : (req,res) => {
-        db.Usuarios.update(
-            {
-            nombre : req.body.nombre.trim(),
-            apellido : req.body.apellido.trim(),
-            email : req.body.email.trim(),
-            telefono : req.body.telefono,
-            direccion : req.body.direccion,
-            avatar: (req.files[0])?req.files[0].filename:req.session.usuario.avatar
-            },
-            {
-                where : {
-                    id : req.params.id
-                }
-            }   
-        )
-        .then(usuario => {
-            console.log(usuario)
-            return res.redirect('/users/profile')
-        })
-        .catch(error => console.log(error))
+        let errors = validationResult(req);
+        if(errors.isEmpty()){
+            db.Usuarios.update(
+                {
+                nombre : req.body.nombre.trim(),
+                apellido : req.body.apellido.trim(),
+                email : req.body.email.trim(),
+                telefono : req.body.telefono,
+                direccion : req.body.direccion,
+                avatar: (req.files[0])?req.files[0].filename:req.session.usuario.avatar
+                },
+                {
+                    where : {
+                        id : req.params.id
+                    }
+                }   
+            )
+            .then(usuario => {
+                console.log(usuario)
+                return res.redirect('/users/profile')
+            })
+            .catch(error => console.log(error))
+        } else {
+            res.render('editProfile', {
+                title: "Editar Perfil",
+                css:"editProfile.css",
+                errors: errors.mapped()
+            })
+        }
     },
     logout : (req,res) => {
         req.session.destroy()

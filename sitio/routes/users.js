@@ -1,10 +1,12 @@
 const express = require('express');
 const router = express.Router();
+//controladores
+const userController = require('../controllers/userController');
 
 //validaciones
-const userController = require('../controllers/userController');
 const loginValidator = require('../validations/loginValidator');
 const registroUsuarioValidator = require('../validations/registroUsuarioValidator');
+const editUsuarioValidator = require('../validations/editUsuarioValidator');
 
 //middlewares
 const avatarUser = require('../middlewares/avatarUser');
@@ -18,7 +20,7 @@ router.post('/login',loginValidator, userController.processLogin);
 
 router.get('/profile',userController.profile);
 router.get('/edit',userController.editProfile);
-router.put('/profile/edit/:id', avatarUser.any(),userController.update);
+router.put('/profile/edit/:id', avatarUser.any(), editUsuarioValidator, userController.update);
 
 router.get('/logout',userController.logout);
 router.delete('/delete/:id',userController.delete);
