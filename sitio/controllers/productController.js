@@ -7,6 +7,15 @@ module.exports = {
         db.Productos.findAll()
         .then(productos => {
             res.render('productos',{
+                title : "Productos subidos",
+                productos : productos
+            })
+        })
+    },
+    productos: (req,res) =>{
+        db.Productos.findAll()
+        .then(productos => {
+            res.render('todoProductos',{
                 title : "Listado de Productos",
                 productos : productos
             })
