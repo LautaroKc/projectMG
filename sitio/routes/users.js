@@ -11,7 +11,7 @@ const avatarUser = require('../middlewares/avatarUser');
 
 /* GET users listing. */
 router.get('/register',userController.register);
-router.post('/register', registroUsuarioValidator, avatarUser.any(), userController.processRegister);
+router.post('/register', avatarUser.any(), registroUsuarioValidator, userController.processRegister);
 
 router.get('/login',userController.login);
 router.post('/login',loginValidator, userController.processLogin);

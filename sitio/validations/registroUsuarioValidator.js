@@ -23,10 +23,10 @@ module.exports = [
         .withMessage("Ingrese una contraseña de minimo de 6 caracteres"),
 
     check('contraseniados')
-        .isEmpty()
+        .isLength({min: 1})
         .withMessage("El campo no puede estar vacio!"),
 
-    body('contrasenianados')
+    body('contraseniados')
     .custom(function(value,{req}){
         if(value != req.body.contrasenia){
             return false

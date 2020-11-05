@@ -6,16 +6,16 @@ const bcrypt = require('bcrypt');
 module.exports = [
 check('nombre')
 .isLength({min: 3})
-.withMessage('El nombre debe tener más de 6 caracteres!'),
+.withMessage('El nombre debe tener más de 3 caracteres!'),
 
 check('categoria')
-.isEmpty()
+.isLength({min: 1})
 .withMessage('Seleccione una categoria!'),
 
 check('precio').isInt()
 .withMessage('Coloque un precio!'),
 
-check('descripcion').isEmpty()
+check('descripcion').isLength({min: 1})
 .withMessage('Ingrese un comentario!'),
 
 check('imagen').isEmpty()
