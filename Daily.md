@@ -1,5 +1,8 @@
 **Daily**
 
+5/10/2020:  
+Finalizado sprint n°6.
+
 3/10/2020:
 Finalizadas las validaciones del front del sitio.
 Actualmente comenzando con las del back tanto Lau como Leo.

@@ -5,13 +5,13 @@ const qs = function(elemento){
 window.addEventListener('load', function(){
 
     //DOMS
-    let formulario = qs('form');
-    let inputNombre = qs('.inputUno');
-    let inputApellido = qs('.inputUnoApellido');
+    let formulario = qs('#formRegistroUsuario');
+    let inputNombre = qs('#inputUno');
+    let inputApellido = qs('#inputUnoApellido');
     let inputAvatar = qs('#inputAvatar');
-    let inputEmail = qs('.inputDos');
-    let inputContrasenia = qs('.inputTres');
-    let inputContraseniaDos = qs('.inputCuatro');
+    let inputEmail = qs('#inputDos');
+    let inputContrasenia = qs('#inputTres');
+    let inputContraseniaDos = qs('#inputCuatro');
     let inputTerminos = qs('.inputTerminos');
 
     //expresiones regulares
@@ -25,6 +25,7 @@ let errorNombre = qs('#errorNombre');
     if(inputNombre.value.length == 0){
         errorNombre.style.display = "grid";
         errorNombre.innerHTML = "El campo no puede estar vacio.";
+        inputNombre.classList.add('is-invalid');
         return false
     }
     if(inputNombre.value.length < 3){
@@ -118,6 +119,27 @@ inputContraseniaDos.addEventListener('blur', function(){
     } else {
         errorPassDos.style.display = "none";
         return true;
+    }
+})
+
+formulario.addEventListener('submit', function(event){
+    let errorMsg = qs('#errorMsg');
+    event.preventDefault()
+    let elementos = formulario.elements;
+    let error = false;
+    for (let i = 0; i < elementos.length -2; i++) {
+        if(elementos[i].value == 0) {
+            errorMsg.style.display = "grid";
+            errorMsg.innerHTML = "Los campos no pueden estar vacios";
+            elementos[i].classList.add('is-invalid');
+            error = true;
+        }
+    }
+    if(error){
+        console.log(error)
+        
+    } else {
+        formulario.submit()
     }
 })
 

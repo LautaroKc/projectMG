@@ -11,27 +11,27 @@ main div{
 }
 
 @media(min-width: 768px){
-    .inputUno {
+    #inputUno {
         position: relative;
         left: 81px;
     }
     
-    .inputUnoApellido {
+    #inputUnoApellido {
         position: relative;
         left: 79px;
     }
 
-    .inputDos{
+    #inputDos{
         position: relative;
         left: 93px;
     }
     
-    .inputTres{
+    #inputTres{
         position: relative;
         left: 63px;
     }
 
-    .inputCuatro{
+    #inputCuatro{
         position: relative;
         left: 3%;
     }
@@ -42,38 +42,38 @@ main div{
 }
 
 @media (min-width: 992px){
-    .inputUno{
+    #inputUno{
         position: relative;
         left: 88px;
     }
-    .inputUnoApellido {
+    #inputUnoApellido {
         position: relative;
         left: 89px;
     }
 
-    .inputDos{
+    #inputDos{
         position: relative;
         left: 99px;
     }
 
-    .inputTres{
+    #inputTres{
         position: relative;
         left: 68px;
     }
 }
 
 @media (min-width: 1440px){
-    .inputUno{
+    #inputUno{
         position: relative;
         left: 95px;
     }
 
-    .inputDos{
+    #inputDos{
         position: relative;
         left: 104px;
     }
 
-    .inputTres{
+    #inputTres{
         position: relative;
         left: 78px;
     }
