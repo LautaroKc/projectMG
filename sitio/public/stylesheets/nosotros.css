@@ -1,11 +1,76 @@
-#map {
+#Cajamap {
     height: 400px;
     width: 100%;
+    position: relative;
+    right: 10%;
+}
+
+#map{
+    height: 300px;
+}
+
+#nosotrosTitulo{
+    position: relative;
+    bottom: 10%;
+    border-bottom: 1px solid white;
+    text-shadow:
+		0 0 5px rgba(0,178,255,1),
+		0 0 10px rgba(0,178,255,1),
+		0 0 20px rgba(0,178,255,1),
+		0 0 40px rgba(38,104,127,1),
+		0 0 80px rgba(38,104,127,1),
+		0 0 90px rgba(38,104,127,1),
+		0 0 100px rgba(38,104,127,1),
+		0 0 140px rgba(38,104,127,1),
+        0 0 180px rgba(38,104,127,1);
+}
+
+#sobreNosotros{
+    text-align: left;
+    font-size: small;
 }
 
 @media (min-width: 768px){
+    #Cajamap{
+        height: 200px;
+        width: 100%;
+        position: initial;
+    }
+
+    #nosotrosTitulo {
+        position: relative;
+        bottom: 35px;
+    }
+
     #map {
         height: 300px;
-        width: 50%;
+        width: 300px;
+    }
+
+    #sobreNosotros{
+        position: relative;
+        top: 32px;
+        font-size: small;
+    }
+}
+
+@media (min-width: 992px){
+    #Cajamap{
+        height: 400px;
+        width: 100%;
+    }
+
+    #map{
+        height: 400px;
+        width: 100%;
+    }
+
+    #nosotrosTitulo{
+        position: relative;
+        bottom: 80px;
+    }
+
+    #sobreNosotros{
+        font-size: medium;
     }
 }

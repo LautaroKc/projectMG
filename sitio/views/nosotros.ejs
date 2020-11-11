@@ -2,7 +2,6 @@
 <html lang="en">
     <%- include('partials/head') %>
     <link rel="stylesheet" href="/stylesheets/<%= css %> ">
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4q3KdLaU_V9UfsIT6ZwmSSuuQu2eAiPI&callback=initMap"></script>
     <%- include('partials/header') %>
 <body>
 <div class="container-fluid">
@@ -11,30 +10,30 @@
     <div class="row cajaTituloNosotros">
         <div class="col-12 nav justify-content-center"> 
             <h2 id="nosotrosTitulo">Sobre nosotros</h2>
+            <h5>¡Somos un emprendimiento enfocado en la venta de componentes y perifericos para el mundo de la computación!</h5>
         </div>
     </div>
 
     <div class="row">
-    <div class="col-sm-12 col-md-4">
-        <p id="sobreNosotrosP">
-            ¡Somos un emprendimiento enfocado en la venta de componentes y perifericos para el mundo de la computación!
+    <div class="col-sm-12 col-md-6">
+        <h5 id="sobreNosotros">
             Nuestras ansias por acercar a las personas a la tecnologia nos ha llevado a crear este sitio en el que creemos
-            firmemente que una buena pagina debe estar bien equilibrada entre funcionamiento, simpleza y elegancia.
-            ¡A su vez, manejamos los mejores productos en cuanto a calidad/precio se refiere!
+            firmemente que una buena pagina debe estar bien equilibrada entre funcionamiento, simpleza y elegancia.<br><br>
             No dude en comprar lo que necesite aquí, se lo enviaremos a su casa con total seguridad.
-            En el caso de que no pueda, también tenemos una sucursal, revise el mapa de la derecha:
-        </p>
+        </h5>
     </div>
 
         <!---Google maps-->
-        <div class="col-sm-12 col-md-4" id="map"></div>
-        <script src="/javascripts/googleMaps.js"></script>
-    </div>
-
-    <div class="row">
-        <div class="col-12">
-            <h4>¿Alguna duda? Contactenos!</h4>
-            <p></p>
+        <div class="col-sm-12 col-md-6" id="Cajamap">
+            <h5 class="text-center" id="ubicamos">Nos ubicamos en:</h5>
+            <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.4325906386857!2d-58.71365704891331!3d-34.54260098037965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDMyJzMzLjQiUyA1OMKwNDInNDEuMyJX!5e0!3m2!1ses-419!2sar!4v1605103945783!5m2!1ses-419!2sar" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe> 
+        </div>
+      
+        <div class="col-sm-12 col-12">
+            <h4 id="contactenos">¿Alguna duda? Contáctenos!</h4>
+            <p style="color: turquoise;">Teléfono: 0800-4444-5555<br>
+            Email: MountainGaming@hotmail.com
+            </p>
         </div>
     </div>
     </main>
