@@ -9,19 +9,34 @@
     <main id="nosotrosCuerpo">
 
     <div class="row cajaTituloNosotros">
-        <div class="col-sm-12 col-6"> 
-            <h4 id="nosotrosTitulo">Sobre nosotros</h4>
+        <div class="col-12 nav justify-content-center"> 
+            <h2 id="nosotrosTitulo">Sobre nosotros</h2>
         </div>
     </div>
-    
-    <div class="col-sm-12 col-6">
-        <p id="sobreNosotrosP">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum, corrupti aut. Recusandae explicabo aliquam doloremque.</p>
+
+    <div class="row">
+    <div class="col-sm-12 col-md-4">
+        <p id="sobreNosotrosP">
+            ¡Somos un emprendimiento enfocado en la venta de componentes y perifericos para el mundo de la computación!
+            Nuestras ansias por acercar a las personas a la tecnologia nos ha llevado a crear este sitio en el que creemos
+            firmemente que una buena pagina debe estar bien equilibrada entre funcionamiento, simpleza y elegancia.
+            ¡A su vez, manejamos los mejores productos en cuanto a calidad/precio se refiere!
+            No dude en comprar lo que necesite aquí, se lo enviaremos a su casa con total seguridad.
+            En el caso de que no pueda, también tenemos una sucursal, revise el mapa de la derecha:
+        </p>
     </div>
 
         <!---Google maps-->
-        <div class="col-sm-12 col-6" id="map"></div>
+        <div class="col-sm-12 col-md-4" id="map"></div>
         <script src="/javascripts/googleMaps.js"></script>
-    
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <h4>¿Alguna duda? Contactenos!</h4>
+            <p></p>
+        </div>
+    </div>
     </main>
 </div>
 <%- include('partials/footer') %>
