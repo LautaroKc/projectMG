@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('partials/head') %>
-<link rel="stylesheet" href="/stylesheets/<%= css %>">
-<%- include('partials/header') %>
+<!-- <link rel="stylesheet" href="/stylesheets/<%= css %>">
+ --><%- include('partials/header') %>
 <body>
 <main>
 
@@ -16,7 +16,7 @@
             <form action="" method="POST" enctype="multipart/form-data" id="formRegistroUsuario">
                     <div class="col-12">
                     <label for="nombre">Nombre:</label>
-                    <input type="text" name="nombre" class="" id="inputUno" <%= (typeof old != 'undefined' && old.nombre)? "es-valido": (typeof errors != 'undefined' && errors.nombre)?"es-invalido": ""%> value="<%= (typeof old != 'undefined' && old.nombre)?old.nombre:'' %>">
+                    <input type="text" name="nombre" class="form-control" id="inputUno" <%= (typeof old != 'undefined' && old.nombre)? "es-valido": (typeof errors != 'undefined' && errors.nombre)?"es-invalido": ""%> value="<%= (typeof old != 'undefined' && old.nombre)?old.nombre:'' %>">
                     <small class="text-danger" style="display: grid;"><%= (typeof errors != 'undefined' && errors.nombre)?errors.nombre.msg: "" %> </small>
                     <small id="errorNombre" style="display: none; color: red;"></small>
                     </div>

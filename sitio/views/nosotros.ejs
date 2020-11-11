@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %>
+    <link rel="stylesheet" href="/stylesheets/<%= css %> ">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4q3KdLaU_V9UfsIT6ZwmSSuuQu2eAiPI&callback=initMap"></script>
+    <%- include('partials/header') %>
+<body>
+<div class="container-fluid">
+    <main id="nosotrosCuerpo">
+
+    <div class="row cajaTituloNosotros">
+        <div class="col-sm-12 col-6"> 
+            <h4 id="nosotrosTitulo">Sobre nosotros</h4>
+        </div>
+    </div>
+    
+    <div class="col-sm-12 col-6">
+        <p id="sobreNosotrosP">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum, corrupti aut. Recusandae explicabo aliquam doloremque.</p>
+    </div>
+
+        <!---Google maps-->
+        <div class="col-sm-12 col-6" id="map"></div>
+        <script src="/javascripts/googleMaps.js"></script>
+    
+    </main>
+</div>
+<%- include('partials/footer') %>
+</body>
+</html>
