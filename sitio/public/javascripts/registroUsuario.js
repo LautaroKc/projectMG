@@ -6,6 +6,7 @@ window.addEventListener('load', function(){
 
     //DOMS
     let formulario = qs('#formRegistroUsuario');
+    let elementos = formulario.elements;
     let inputNombre = qs('#inputUno');
     let inputApellido = qs('#inputUnoApellido');
     let inputAvatar = qs('#inputAvatar');
@@ -125,7 +126,8 @@ inputContraseniaDos.addEventListener('blur', function(){
 formulario.addEventListener('submit', function(event){
     let errorMsg = qs('#errorMsg');
     event.preventDefault()
-    let elementos = formulario.elements;
+   // let elementos = formulario.elements;
+    console.log(elementos);
     let error = false;
     for (let i = 0; i < elementos.length -2; i++) {
         if(elementos[i].value == 0) {

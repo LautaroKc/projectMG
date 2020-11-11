@@ -16,5 +16,11 @@ module.exports = {
             css: "ayuda.css",
             title: "Ayuda"
         })
+    },
+    about: function(req, res){
+        res.render('nosotros', {
+            css: "nosotros.css",
+            title: "Nosotros"
+        })
     }
 }

@@ -17,7 +17,8 @@ module.exports = {
         .then(productos => {
             res.render('todoProductos',{
                 title : "Listado de Productos",
-                productos : productos
+                productos : productos,
+                css: "todosProductos.css"
             })
         })
     },
