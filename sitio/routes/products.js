@@ -12,6 +12,7 @@ const editProductValidator = require('../validations/editProductValidator');
 router.get('/listar', productController.listar);
 router.get('/detalle/:id',productController.detalle);
 router.get('/productos', productController.productos);
+router.get('/armado',productController.armado);
 
 //buscar productos
 router.get('/buscar', productController.buscar);

@@ -59,6 +59,16 @@ module.exports = {
             })
         })
     },
+    armado : (req,res) =>{
+        db.Productos.findAll()
+        .then(productos => {
+            res.render('armadoDePc',{
+                title : "Armado de PC",
+                css: "armado.css",
+                productos : productos
+            })
+        })
+    },
     agregar : (req,res) => {
         db.Categorias.findAll({
             order:[

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head') %>
+<link rel="stylesheet" href="/stylesheets/<%= css %> ">
+<%- include('partials/header') %>
+<body>
+
+
+<div class="row" id="cuerpo">
+    <div class="col-3">
+        <ul id="listaCategorias">
+            <li class="lista">Motherboards</li>
+            <li class="lista">Pantallas</li>
+            <li class="lista">Fuentes</li>
+            <li class="lista">Ram</li>
+            <li class="lista">Alamacenamiento</li>
+            <li class="lista">Procesadores</li>
+            <li class="lista">Gabinetes</li>
+            <li class="lista">Otros</li>
+        </ul>
+    </div>
+
+    <section class="col-8">
+      
+      <div class="row m-5">
+        <% productos.forEach(producto => { %>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="contenidoyofertas text-center">
+            <figure>
+            <a id="cajaproducto" href="/products/detalle/<%- producto.id %>">
+            <h5><%- producto.nombre %></h5>
+            <img src="/images/products/<%- producto.imagen %>" id="imagendelproducto">
+            <h5 class="my-2" style="color: rgb(0, 255, 0);">$<%= producto.precio %></h5>
+            </a>
+            <form action="">
+                <input type="checkbox" name="add" id="">
+            </form>
+            </figure>
+          </div>
+        </div>
+        <% }) %> 
+
+      </div>
+     </section>
+</div>
+
+
+
+<%- include('partials/footer') %>
+<script src="/javascripts/productoZoom.js"></script> 
+</body>
+</html>

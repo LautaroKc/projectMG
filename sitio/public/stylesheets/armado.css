@@ -1,0 +1,24 @@
+#cuerpo{
+    margin: 20px;
+}
+
+#listaCategorias{
+    color: orange;
+    list-style: none;
+}
+
+.lista{
+    margin: 20px;
+    background-color: rgba(136, 216, 240, 0.507);
+    border-radius: 10px;
+    font-size: x-large;
+    padding: 2px;
+}
+
+@media (min-width: 768px){
+
+}
+
+@media (min-width: 992px){
+
+}
