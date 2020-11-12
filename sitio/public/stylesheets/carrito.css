@@ -66,6 +66,13 @@ h5#preciototal{
     color: silver;
 }
 
+#btnAgregarCarrito{
+    font-size: 13px;
+    position: relative;
+    top: -5px;
+    width: 200px;
+}
+
 @media(min-width: 768px){
     h6.precio{
         font-size: 15px;

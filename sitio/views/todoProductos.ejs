@@ -5,19 +5,20 @@
     <body>
     <%- include('partials/header') %>
 
-<div class="container" style="background-color:rgba(136, 216, 240, 0.507); margin-top: 10px; margin-bottom: 10px;">
+<div class="container" style="background-color:rgba(136, 216, 240, 0.507); margin-top: 10px; margin-bottom: 10px; box-shadow: 0 0 15px 1px white;">
     <div class="row">    
         <div class="col-12">
-            <h4 class="nav justify-content-center" style="border-bottom: 1px solid white; margin-bottom: 15px;">Todos nuestros productos</h4>
+            <h4 class="nav justify-content-center" id="tituloTodosProductos">Todos nuestros productos</h4>
         </div>
         <div class="row">
             <% productos.forEach(elemento => { %>
             <div class="col-sm-12 col-md-6 col-lg-4 my-4 todosProductos">
-                <div class="col-12 text-center">
-                    <h5 style="color: orange;"><%= elemento.nombre %></h5>
-                    <img src="/images/products/<%= elemento.imagen %>" class="img-fluid" id="imagendelproducto">
-                    <h4 class="my-2" style="color: rgb(0, 255, 0);">$<%= elemento.precio %></h4>
-                    <p style="color: white; font-size: small;"><%= elemento.descripcion %></p>
+                <div class="colcol-12 cajaTodosProductos">
+                    <a id="aTodosProductos" href="/products/detalle/<%- elemento.id %>">
+                    <h4 id="nombreProducto"><%= elemento.nombre %></h4>
+                    <img src="/images/products/<%= elemento.imagen %>" class="img-fluid" id="imgProducto">
+                    <h5 style="color: white;">Precio:<span style= "color: rgb(0, 255, 0);"> $<%= elemento.precio %></span></h5>
+                    </a>
                 </div>
             </div>
             <% }) %>

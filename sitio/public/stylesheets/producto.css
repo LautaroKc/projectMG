@@ -1,10 +1,12 @@
 .container{
     overflow: hidden;
 }
-#imagendelproducto{
-    border: 1px solid black;
-    width: 200px;
-    height: 200px;
+
+#tarjetasimagen{
+    height: 20%;
+}
+#enviosimagen{
+    height: 20%;
 }
 
 #todoslosproductossection{
@@ -42,10 +44,26 @@ section #cajaproducto h5:hover{
     transition: 2s;
 }
 
+#sectionDetalleProducto{
+    height: 750px;
+    width: 100%;
+}
+
 @media (min-width: 768px) {
+    #btnAgregarCarrito{
+        font-size: 20px;
+    }
+
     section .ofertas{
         display: inline-flex;
         position: relative;
         left: 5%;
     }
+    
+#tarjetasimagen{
+    height: 10%;
+}
+#enviosimagen{
+    height: 10%;
+}
 }

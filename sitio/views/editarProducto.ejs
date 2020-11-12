@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('partials/head') %>
-<body>
+<link rel="stylesheet" href="/stylesheets/<%= css %>">
 <%- include('partials/header') %>
-
+<body>
 <main>
 <h2 class="text-center my-4"><%= title %> </h2>
 <section class="container">
@@ -12,7 +12,7 @@
         <form action="/products/editar/<%= producto.id %>?_method=PUT"  method="POST" id="formularioEditProduct">
             <div class="row">
                 <div class="col-md-12 col-lg-6">
-                     <div id="cajanombre form-group ">
+                     <div id="cajanombre form-group">
                         <label for="">Nombre:</label>
                         <input class="form-control" type="text" name="nombre" value="<%= producto.nombre %> " id="inputNombre">
                         <small id="errorNombre" style="display: none; color: red;"></small>

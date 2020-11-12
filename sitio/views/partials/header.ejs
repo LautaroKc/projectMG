@@ -32,7 +32,7 @@
           <% } else{ %>
             <li><a href="/users/profile" id="ingresoyregistro">Perfil</a></li>
             <li><a href="/users/logout" id="ingresoyregistro">Desloguear</a></li>
-            <% if (usuario.rol === "admin") { %>
+            <% if (usuario.email == "nacho@gmail.com") { %>
               <li><a href="/products/agregar" id="ingresoyregistro">Subir productos</a></li>
               <li><a href="/products/listar" id="ingresoyregistro">Ver productos</a></li>
             <% } %>

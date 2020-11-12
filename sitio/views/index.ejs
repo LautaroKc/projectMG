@@ -10,7 +10,7 @@
 <!--carrusel-->
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active" id="bannerCarousel"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
@@ -42,7 +42,7 @@
   
 <!---OFERTAS-->
     <div class="row my-5">
-      <h3 class="col-12 text-center">Ofertas</h3>
+      <h3 class="col-12 text-center" style="-webkit-text-stroke: 1px orange;">Ofertas</h3>
      </div>
   
       <section>
@@ -54,8 +54,8 @@
           <div class="contenidoyofertas text-center">
             <figure>
             <a id="cajaproducto" href="/products/detalle/<%- producto.id %>">
-            <h5><%- producto.nombre %></h5>
-            <img src="/images/products/<%- producto.imagen %>" id="imagendelproducto">
+            <h5 id="nombreProductoIndex"><%- producto.nombre %></h5>
+            <img src="/images/products/<%- producto.imagen %>" id="imagendelproducto" style="border-radius: 15px;">
             <h5 class="my-2" style="color: rgb(0, 255, 0);">$<%= producto.precio %></h5>
             </a>
             </figure>

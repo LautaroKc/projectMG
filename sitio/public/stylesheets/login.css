@@ -1,5 +1,4 @@
 body .cuerpo{
-    width: 50%;
     background-color: rgba(136, 216, 240, 0.507);
     border: 1px solid white;
     border-radius: 5px;
@@ -14,24 +13,5 @@ body .cuerpo{
 
 #registrarse:hover{
     color: red;
-}
-
-.inputCinco{
-    position: relative;
-    right: 26px;
-}
-.inputSeis{
-    position: relative;
-    right: 26px;
-}
-
-@media (min-width: 768px){
-    .inputCinco{
-        position: relative;
-        left: 50px;
-    }
-    .inputSeis{
-        position: relative;
-        left: 20px;
-    }
+    transition: color 5s;
 }
