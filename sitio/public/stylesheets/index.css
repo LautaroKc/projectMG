@@ -25,6 +25,7 @@ h2, h3, h4, h5, h6{
 
 input {
     text-transform: none;
+    border-radius: 5px;
 }
 
 /*header*/
@@ -132,15 +133,14 @@ i.fas.fa-cart-plus {
 }
 
 button{
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: orange;
-    border: orange solid 1px;
+    border: 1px solid black;
     font-weight: bold;
     margin: 10px;
 }
 
 form{
-    font-weight: bold;
     text-align: center;
     color: orange;
     margin-left: 1px;
@@ -151,6 +151,7 @@ section{
     margin: 2px;
     border-radius: 5px;
     border: 1px solid white;
+    box-shadow: 0 0 15px 1px white;
 }
 
 /*footer*/

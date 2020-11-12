@@ -6,9 +6,10 @@ module.exports = {
     listar : (req,res) => {
         db.Productos.findAll()
         .then(productos => {
-            res.render('productos',{
+            res.render('listaProductos',{
                 title : "Productos subidos",
-                productos : productos
+                productos : productos,
+                css: "listaProductos.css"
             })
         })
     },
@@ -55,7 +56,8 @@ module.exports = {
         .then( producto => {
             res.render('detalleProducto',{
                 title : "Detalle del Producto",
-                producto : producto
+                producto : producto,
+                css: "detalleProducto.css"
             })
         })
     },
