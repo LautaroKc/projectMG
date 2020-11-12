@@ -32,6 +32,7 @@ input {
 header{
     background-color: var(--color-celeste);
     border-bottom: 2px solid white;
+    margin-bottom: 5%;
 }
 
 #avatarImage {
@@ -162,6 +163,7 @@ footer{
     text-align: center;
     padding: 1em;
     align-self: flex-end;
+    margin-top: 5%;
 }
 
 #contacto{
