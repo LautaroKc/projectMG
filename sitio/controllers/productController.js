@@ -113,7 +113,8 @@ module.exports = {
                     title: "Agregar Producto",
                     css: 'registroProduct.css',
                     categorias: categoria,
-                    errors: errors.mapped()
+                    errors: errors.mapped(),
+                    usuario: req.session.usuario
                 })  
             })
         }

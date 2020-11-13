@@ -7,6 +7,11 @@
     list-style: none;
 }
 
+#imagendelproducto{
+    width: 100%;
+    height: 200px;
+}
+
 .lista{
     margin: 20px;
     background-color: rgba(136, 216, 240, 0.507);

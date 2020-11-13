@@ -3,7 +3,7 @@ var router = express.Router();
 
 let productController = require('../controllers/productController');
 let upLoadMulter = require('../middlewares/upImagesProducts');
-
+const sessionUserCheck = require('../middlewares/sessionUserCheck');
 //Validaciones
 const productoValidator = require('../validations/productoValidator');
 const editProductValidator = require('../validations/editProductValidator');
@@ -18,7 +18,7 @@ router.get('/armado',productController.armado);
 router.get('/buscar', productController.buscar);
 
 //agregar productos
-router.get('/agregar',productController.agregar);
+router.get('/agregar',sessionUserCheck, productController.agregar);
 router.post('/agregar',upLoadMulter.any(), productoValidator, productController.guardar);
 
 //editar productos

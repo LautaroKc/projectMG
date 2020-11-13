@@ -10,7 +10,6 @@ module.exports = [
         .withMessage("Ingrese un nombre valido"),
 
     check("categoria")
-        .isEmpty()
         .isLength({ min: 1 })
         .withMessage("Seleccione una categoria"),
 
