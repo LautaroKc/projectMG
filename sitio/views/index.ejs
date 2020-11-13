@@ -42,7 +42,7 @@
   
 <!---OFERTAS-->
     <div class="row my-5">
-      <h3 class="col-12 text-center" style="-webkit-text-stroke: 1px orange;">Ofertas</h3>
+      <h3 class="col-12 text-center" style="-webkit-text-stroke: 1px orange;">¡Lo Nuevo!</h3>
      </div>
   
       <section>
@@ -52,11 +52,12 @@
 
         <div class="col-12 col-md-6 col-lg-3">
           <div class="contenidoyofertas text-center">
-            <figure>
+            <figure id="figureProducto">
             <a id="cajaproducto" href="/products/detalle/<%- producto.id %>">
-            <h5 id="nombreProductoIndex"><%- producto.nombre %></h5>
             <img src="/images/products/<%- producto.imagen %>" id="imagendelproducto" style="border-radius: 15px;">
+            <i class="fas fa-truck" id="camioncito"></i>
             <h5 class="my-2" style="color: orange;">$<%= producto.precio %></h5>
+            <h5 id="nombreProductoIndex"><%- producto.nombre %></h5>
             </a>
             </figure>
           </div>
@@ -70,7 +71,7 @@
 </div>
 
 <div class="container my-5">
-  <h5 class="col-12 nav justify-content-center" style="border-bottom: 1px solid white; -webkit-text-stroke: 2px black; font-weight: bolder; font-size: 3rem; color: orange;">Patrocinores</h5>
+  <h5 class="col-12 nav justify-content-center" style="border-bottom: 1px solid white; -webkit-text-stroke: 2px black; font-weight: bolder; color: orange;" id="patrocinadores">Patrocinadores</h5>
 <footer class="nav justify-content-center" id="sponsors" style="background-color: white; box-shadow: 0 0 15px 1px white;">
     <div class="col-12 carousel slide" data-ride="carousel" id="carouselDos" data-interval="1000">
       <div class="carousel-inner">

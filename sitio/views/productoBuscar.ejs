@@ -11,12 +11,12 @@
         <div class="col-12">
             <h2>Resultados de su busqueda: <%= producto.length %></h5>
         </div>
-        <div class="col-12">
+        <div class="col-sm-12 col-md-6">
             <figure id="productoCajaBusqueda">
             <% producto.forEach(producto => { %>
                 <a href="/products/detalle/<%= producto.id %>" style="text-decoration: none; background-color: red; transition: 2s;">
-                <img src="/images/products/<%= producto.imagen %>" id="imagendelproducto" alt="img" width="150px">
-                <h4 class="productoEncontrado"><%= producto.nombre %></h4>
+                <img src="/images/products/<%= producto.imagen %>" alt="img" width="15%" height="200px" style="border: 1px solid black; border-radius: 5px;">
+                <h4 class="productoEncontrado" style="color: orange; -webkit-text-stroke: 1px black;"><%= producto.nombre %></h4>
                 </a>
             <% }) %>
             </figure>

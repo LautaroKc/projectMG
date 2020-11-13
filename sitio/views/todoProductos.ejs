@@ -13,7 +13,7 @@
         <div class="row">
             <% productos.forEach(elemento => { %>
             <div class="col-sm-12 col-md-6 col-lg-4 my-4 todosProductos">
-                <div class="colcol-12 cajaTodosProductos">
+                <div class="col-12 cajaTodosProductos">
                     <a id="aTodosProductos" href="/products/detalle/<%- elemento.id %>">
                     <h4 id="nombreProducto"><%= elemento.nombre %></h4>
                     <img src="/images/products/<%= elemento.imagen %>" class="img-fluid" id="imgProducto">
@@ -23,9 +23,6 @@
             </div>
             <% }) %>
         </div>
-       
-            
-     
     </div>
 </div>
 
