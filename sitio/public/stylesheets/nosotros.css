@@ -6,7 +6,7 @@
 }
 
 #nosotrosCuerpo{
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 0 0 15px 1px white;
     background-color:  rgba(136, 216, 240, 0.507);
 }
@@ -28,16 +28,6 @@
     position: relative;
     bottom: 2%;
     border-bottom: 1px solid white;
-    text-shadow:
-		0 0 5px rgba(0,178,255,1),
-		0 0 10px rgba(0,178,255,1),
-		0 0 20px rgba(0,178,255,1),
-		0 0 40px rgba(38,104,127,1),
-		0 0 80px rgba(38,104,127,1),
-		0 0 90px rgba(38,104,127,1),
-		0 0 100px rgba(38,104,127,1),
-		0 0 140px rgba(38,104,127,1),
-        0 0 180px rgba(38,104,127,1);
 }
 
 #sobreNosotros{

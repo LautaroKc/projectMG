@@ -20,7 +20,8 @@ body {
 }
 
 h2, h3, h4, h5, h6{
-    color: white;
+    color: orange;
+    text-shadow: black 1px 1px 2px;
 }
 
 input {
@@ -86,6 +87,7 @@ i.fas.fa-user {
     margin-left: 5px;
     text-decoration: none;
 }
+
 #ingresoyregistro:hover{
     color:red;
 }
@@ -180,9 +182,9 @@ footer{
     color: red;
 }
 
-div#copyright{
+#copyright {
     position: relative;
-    left: 10%;
+    left: 40%;
 }
 
 #copyright p{
@@ -206,6 +208,35 @@ div#copyright{
 
 #sponsors.p{
     color: white;
+}
+
+@media(min-width: 320px){
+    ul.redes{
+        display: flex;
+        text-align: center;
+        position: relative;
+        right: 5%;
+        justify-content: center;
+    }
+
+    #copyright {
+        position: relative;
+        left: 1%;
+    }
+}
+
+@media(min-width:370px){
+    #copyright {
+        position: relative;
+        left: 7%;
+    }
+}
+
+@media(min-width:425px){
+    #copyright {
+        position: relative;
+        left: 15%;
+    }
 }
 
 @media (min-width: 768px) {
@@ -264,9 +295,9 @@ div#copyright{
        display: grid;
     }
 
-    div#copyright{
+    #copyright {
         position: relative;
-        left: 25%;
+        left: 30%;
     }
 }
 
@@ -311,8 +342,8 @@ div#copyright{
         top: 5%
     }
 
-    div#copyright{
+    #copyright{
         position: relative;
-        left: 33%;
+        left: 35%;
     }
 }

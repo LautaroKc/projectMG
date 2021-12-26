@@ -16,9 +16,7 @@
 }
 
 #figureProducto{
-    border: 1px solid black;
     padding: 20px;
-    box-shadow: 0 0 15px 1px white;
     border-radius: 5px;
 }
 
@@ -49,11 +47,6 @@
     border: 1px solid black;
     height: 150px;
     width: 60%;
-}
-
-#nombreProductoIndex{
-    color: orange;
-    -webkit-text-stroke: 1px black;
 }
 
 #nombreProductoIndex:hover{
